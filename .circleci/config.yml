@@ -4,12 +4,9 @@ jobs:
     docker:
       - image: circleci/node:10
     steps:
-      - run:
-        name: one
-        command: echo "step one"
-      - run:
-        name: two
-        command: echo "step two"
-      - run:
-        name: mail
-        command: echo "mail is "$MAIL
+      - add_ssh_keys:
+        fingerprints:
+          - "16:8e:90:bf:f4:15:9a:4d:78:45:0c:fe:2d:7d:08:30"
+      - run: echo "step one"
+      - run: echo "step two"
+      - run: echo "mail is "$MAIL
